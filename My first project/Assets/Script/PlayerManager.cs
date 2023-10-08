@@ -39,13 +39,12 @@ using UnityEngine;
                 Jump();
                 KickBoard();
                 Run();
-                
+
                 if (Input.GetKeyDown(KeyCode.F))
                 {
                     Interaction();
                 }
             }
-            
         }
 
         private void OnTriggerEnter2D(Collider2D other)
