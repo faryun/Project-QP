@@ -4727,7 +4727,7 @@ GameObject:
   - component: {fileID: 1084856481}
   - component: {fileID: 1084856480}
   m_Layer: 0
-  m_Name: Box2
+  m_Name: Moving2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5023,7 +5023,7 @@ GameObject:
   - component: {fileID: 1359487670}
   - component: {fileID: 1359487675}
   m_Layer: 0
-  m_Name: MovingTest
+  m_Name: Moving1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5647,5 +5647,5 @@ SceneRoots:
   - {fileID: 1535185519}
   - {fileID: 1601691817}
   - {fileID: 1359487673}
-  - {fileID: 1192600906}
   - {fileID: 1084856483}
+  - {fileID: 1192600906}
