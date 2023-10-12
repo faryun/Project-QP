@@ -1,16 +1,37 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using ObjectState;
 using UnityEngine;
+
+namespace ObjectState
+{
+    //오브젝트 분류
+    public enum ObjectType
+    {
+        etest,
+        etest1,
+    }
+}
+
 
 public class InteractionObject : MonoBehaviour
 {
     private PlayerManager player;
+    public ObjectType objectType;
 
     public void Interaction() 
     {
-        //상호작용 관련 함수
-        Debug.Log("버섯이다");
+        //상호작용 관련
+        if(objectType == ObjectType.etest)
+        {
+            Debug.Log("버섯이다.");
+        }
+
+        if(objectType == ObjectType.etest1)
+        {
+            Debug.Log("끝이다.");
+        }
     }
 
     private void OnTriggerEnter2D(Collider2D collison) 
