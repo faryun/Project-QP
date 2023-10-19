@@ -24,7 +24,7 @@ public class InteractionObject : MonoBehaviour
     public GameObject Object;
     public SpriteRenderer spriteRenderer;
     public Sprite sprite;
-    private bool ontrigger = false;
+    private bool trigger = false;
 
     public void Interaction() 
     {
@@ -41,12 +41,12 @@ public class InteractionObject : MonoBehaviour
 
         if(objectType == ObjectType.hidden)
         {    
-            if(!ontrigger)
+            if(!trigger)
             {
                 Debug.Log("무언가가 작동한거 같다.");
                 spriteRenderer.sprite = sprite; //img change
                 Object.SetActive(true);
-                ontrigger = true;
+                trigger = true;
             }
 
             else return;
