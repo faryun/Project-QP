@@ -16,15 +16,14 @@ namespace ObjectState
     }
 }
 
-
 public class InteractionObject : MonoBehaviour
 {
     private PlayerManager player;
     public ObjectType objectType;
     public GameObject Object;
     public SpriteRenderer spriteRenderer;
-    public Sprite sprite;    
-    
+    public Sprite sprite;
+
     public void Interaction() 
     {
         //상호작용 관련
