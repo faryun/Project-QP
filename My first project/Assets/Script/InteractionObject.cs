@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using ObjectState;
 using UnityEngine;
+using UnityEngine.UI;
 
 namespace ObjectState
 {
@@ -21,7 +22,9 @@ public class InteractionObject : MonoBehaviour
     private PlayerManager player;
     public ObjectType objectType;
     public GameObject Object;
-
+    public SpriteRenderer spriteRenderer;
+    public Sprite sprite;    
+    
     public void Interaction() 
     {
         //상호작용 관련
@@ -38,6 +41,7 @@ public class InteractionObject : MonoBehaviour
         if(objectType == ObjectType.hidden)
         {
             Debug.Log("무언가가 작동한거 같다.");
+            spriteRenderer.sprite = sprite; //img change
             Object.SetActive(true);
         }
     }
