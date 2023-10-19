@@ -46,6 +46,8 @@ public class MovingPlatform : MonoBehaviour
     public float zigzagLineDistance = 2;
     float zigzagStep;
     bool zigzagMovingPositive = true;
+    private Vector3 platformLastPos;
+    private GameObject player;
 
     // Start is called before the first frame update
     void Start()
@@ -53,6 +55,8 @@ public class MovingPlatform : MonoBehaviour
         // Set start position
         startPosition = this.transform.position;
         zigzagStep = 0f;
+
+        platformLastPos = transform.position; // 초기 위치 저장
     }
 
     // Update is called once per frame
@@ -73,20 +77,31 @@ public class MovingPlatform : MonoBehaviour
     }
 
     void OnCollisionEnter2D(Collision2D collision)
+{
+    if (collision.gameObject.CompareTag("Player"))
     {
-        if (collision.gameObject.CompareTag("Player"))
-        {
-            collision.transform.SetParent(this.transform);
-        }
+        player = collision.gameObject;
+    }
+}
+
+void OnCollisionExit2D(Collision2D collision)
+{
+    if (collision.gameObject.CompareTag("Player"))
+    {
+        player = null;
+    }
+}
+
+void LateUpdate()
+{
+    if (player != null)
+    {
+        Vector3 deltaPosition = transform.position - platformLastPos; // 플랫폼의 이동량 계산
+        player.transform.position += deltaPosition; // 캐릭터에게 이동량 적용
     }
 
-    void OnCollisionExit2D(Collision2D collision)
-    {
-        if (collision.gameObject.CompareTag("Player"))
-        {
-            collision.transform.SetParent(null);
-        }
-    }
+    platformLastPos = transform.position; // 현재 위치 업데이트
+}
 
     // Move the platform in a straight line in movementOrientation
     public void moveInAStraightLine() 
