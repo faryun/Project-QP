@@ -11,6 +11,7 @@ namespace ObjectState
     {
         etest,
         etest1,
+        hidden,
     }
 }
 
@@ -19,6 +20,7 @@ public class InteractionObject : MonoBehaviour
 {
     private PlayerManager player;
     public ObjectType objectType;
+    public GameObject Object;
 
     public void Interaction() 
     {
@@ -31,6 +33,12 @@ public class InteractionObject : MonoBehaviour
         if(objectType == ObjectType.etest1)
         {
             Debug.Log("끝이다.");
+        }
+
+        if(objectType == ObjectType.hidden)
+        {
+            Debug.Log("무언가가 작동한거 같다.");
+            Object.SetActive(true);
         }
     }
 
