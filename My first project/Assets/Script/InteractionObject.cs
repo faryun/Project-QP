@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using ObjectState;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -23,6 +24,7 @@ public class InteractionObject : MonoBehaviour
     public GameObject Object;
     public SpriteRenderer spriteRenderer;
     public Sprite sprite;
+    private bool ontrigger = false;
 
     public void Interaction() 
     {
@@ -38,10 +40,16 @@ public class InteractionObject : MonoBehaviour
         }
 
         if(objectType == ObjectType.hidden)
-        {
-            Debug.Log("무언가가 작동한거 같다.");
-            spriteRenderer.sprite = sprite; //img change
-            Object.SetActive(true);
+        {    
+            if(!ontrigger)
+            {
+                Debug.Log("무언가가 작동한거 같다.");
+                spriteRenderer.sprite = sprite; //img change
+                Object.SetActive(true);
+                ontrigger = true;
+            }
+
+            else return;
         }
     }
 
