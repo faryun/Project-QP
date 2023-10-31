@@ -5,6 +5,7 @@ using ObjectState;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 namespace ObjectState
 {
@@ -14,6 +15,8 @@ namespace ObjectState
         etest,
         etest1,
         hidden,
+        finish,
+
     }
 }
 
@@ -34,9 +37,10 @@ public class InteractionObject : MonoBehaviour
             Debug.Log("버섯이다.");
         }
 
-        if(objectType == ObjectType.etest1)
+        if(objectType == ObjectType.finish)
         {
             Debug.Log("끝이다.");
+            SceneManager.LoadScene("LevelSelect");
         }
 
         if(objectType == ObjectType.hidden)
