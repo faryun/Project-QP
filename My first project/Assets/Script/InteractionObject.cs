@@ -6,6 +6,7 @@ using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using Unity.PlasticSCM.Editor.WebApi;
 
 namespace ObjectState
 {
@@ -28,17 +29,27 @@ public class InteractionObject : MonoBehaviour
     public SpriteRenderer spriteRenderer;
     public Sprite sprite;
     private bool trigger = false;
+    Timer timer;
+
+    private void Awake() {
+        timer = GameObject.Find("Time").GetComponent<Timer>();
+    }
 
     public void Interaction() 
     {
         //상호작용 관련
-        if(objectType == ObjectType.etest)
-        {
+        if(objectType == ObjectType.etest) {
             Debug.Log("버섯이다.");
         }
 
-        if(objectType == ObjectType.finish)
-        {
+        if(objectType == ObjectType.finish) {
+            timer.end = true;
+            if(DataManager.Instance.data.time[DataManager.Instance.data.currentLevel] == 0 || timer.currentTime < DataManager.Instance.data.time[DataManager.Instance.data.currentLevel]) {
+                DataManager.Instance.data.time[DataManager.Instance.data.currentLevel] = timer.currentTime;
+                DataManager.Instance.SaveGameData();
+            }
+            DataManager.Instance.data.isUnlock[DataManager.Instance.data.currentLevel + 1] = true;
+            DataManager.Instance.SaveGameData();
             Debug.Log("끝이다.");
             SceneManager.LoadScene("LevelSelect");
         }

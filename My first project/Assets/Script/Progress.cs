@@ -15,28 +15,24 @@ public class Progress : MonoBehaviour {
     [SerializeField]
     private Button startButton;
 
-    public void Play(UnityAction action=null) {
-        StartCoroutine(OnProgress(action));
-    }
+    float current = 0;
+    float progress = 0;
+    int buttonAlpha = 0;
 
-    private IEnumerator OnProgress(UnityAction action) {
-        float current = 0;
-        float progress = 0;
-        int buttonAlpha = 0;
+    private void FixedUpdate() {
 
-        while (progress < 1)
-        {
+        if(progress < 1) {
             current += Time.deltaTime * 0.5f;
             progress = current / progressTime;
 
             textProgressData.text = $"·ÎµùÁß.. {sliderProgress.value * 100:F0}%";
             sliderProgress.value = Mathf.Lerp(0, 1, progress);
+        }  
 
-            yield return null;  
+        else {
+            startButton.gameObject.SetActive(true);
         }
-
-        startButton.gameObject.SetActive(true);
-
-        action?.Invoke();
     }
+
+
 }

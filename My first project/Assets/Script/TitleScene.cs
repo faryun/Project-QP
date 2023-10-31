@@ -20,10 +20,10 @@ public class TitleScene : MonoBehaviour
 
         Screen.sleepTimeout = SleepTimeout.NeverSleep;
 
-        progress.Play(OnAfterProgress);
+        //progress.Play(OnAfterProgress);
     }
 
     private void OnAfterProgress( ) {
-
+        
     }
 }
