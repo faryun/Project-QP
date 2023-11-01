@@ -20,7 +20,6 @@ using UnityEngine;
         public InteractionObject interObj {set {_interObj = value;}}
         private InteractionObject _interObj;
 
-
         // Start is called before the first frame update
         void Start()
         {
@@ -31,7 +30,7 @@ using UnityEngine;
         private void Update()
         {
             Restart();
-            if (alive)
+            if (alive && !PauseMenu.GameIsPaused)
             {
                 Hurt();
                 Die();
