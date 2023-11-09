@@ -22,7 +22,7 @@ public class Timer : MonoBehaviour
     public void FixedUpdate() {
         if(!end) {
             currentTime += Time.deltaTime;
-            timerUI.text = $"ÁøÇà½Ã°£: {currentTime:F2}ÃÊ";
+            timerUI.text = $"ì§„í–‰ì‹œê°„: {currentTime:F2}";
         }
     }
 }

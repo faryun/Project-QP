@@ -19,6 +19,9 @@ using UnityEngine;
         private bool isKickboard = false;
         public InteractionObject interObj {set {_interObj = value;}}
         private InteractionObject _interObj;
+        
+        public GimmicGround gimmicGround {set {_gimmicGround = value;}}
+        private GimmicGround _gimmicGround;
 
         // Start is called before the first frame update
         void Start()
@@ -38,6 +41,7 @@ using UnityEngine;
                 Jump();
                 KickBoard();
                 Run();
+                GroundEffect();
 
                 if (Input.GetKeyDown(KeyCode.F))
                 {
@@ -56,6 +60,12 @@ using UnityEngine;
         if(_interObj == null) return;
         _interObj.Interaction();
         anim.SetTrigger("attack");
+    }
+
+     private void GroundEffect()
+    {
+        if(_gimmicGround == null) return;
+        _gimmicGround.GroundEffect();
     }
 
     void KickBoard()
