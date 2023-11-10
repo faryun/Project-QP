@@ -5,9 +5,8 @@ using Unity.VisualScripting;
 using UnityEditor;
 using UnityEngine;
 
-    public class PlayerManager : MonoBehaviour
-    {
-        public float movePower = 10f;
+public class PlayerManager : MonoBehaviour
+    {        public float movePower = 10f;
         public float KickBoardMovePower = 15f;
         public float jumpPower = 20f; //Set Gravity Scale in Rigidbody2D Component to 5
 
@@ -33,13 +32,12 @@ using UnityEngine;
 
         private void Update()
         {
-            Restart();
-            if (!PauseMenu.GameIsPaused)
+            if (!PauseMenu.GameIsPaused && alive)
             {
                 Run();
                 Jump();
                 GroundEffect();
-
+                Die();
                 if (Input.GetKeyDown(KeyCode.F))
                 {
                     Interaction();
@@ -61,6 +59,8 @@ using UnityEngine;
 
      private void GroundEffect()
     {
+        if(_gimmicGround == null) return;
+        
         if(_gimmicGround.groundType == GroundState.GroundType.nomal) movePower = 10;
         
         if(_gimmicGround.groundType == GroundState.GroundType.slow) movePower = 5;
@@ -174,8 +174,11 @@ using UnityEngine;
         }
         void Die()
         {
-            if (Input.GetKeyDown(KeyCode.Alpha3))
+            if (transform.position.y <= -50)
             {
+                // y 좌표가 -50 이하라면 로그를 출력
+                Debug.Log("플레이어의 y 좌표가 -50 이하입니다.");
+                alive = false;
                 isKickboard = false;
                 anim.SetBool("isKickBoard", false);
                 anim.SetTrigger("die");
