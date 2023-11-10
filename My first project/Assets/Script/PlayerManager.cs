@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEditor;
 using UnityEngine;
 
@@ -33,14 +34,10 @@ using UnityEngine;
         private void Update()
         {
             Restart();
-            if (alive && !PauseMenu.GameIsPaused)
+            if (!PauseMenu.GameIsPaused)
             {
-                Hurt();
-                Die();
-                Attack();
-                Jump();
-                KickBoard();
                 Run();
+                Jump();
                 GroundEffect();
 
                 if (Input.GetKeyDown(KeyCode.F))
@@ -64,8 +61,11 @@ using UnityEngine;
 
      private void GroundEffect()
     {
-        if(_gimmicGround == null) return;
-        _gimmicGround.GroundEffect();
+        if(_gimmicGround.groundType == GroundState.GroundType.nomal) movePower = 10;
+        
+        if(_gimmicGround.groundType == GroundState.GroundType.slow) movePower = 5;
+
+        if(_gimmicGround.groundType == GroundState.GroundType.fast) movePower = 15;
     }
 
     void KickBoard()

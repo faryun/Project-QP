@@ -1,20 +1,15 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
-using ObjectState;
-using Unity.VisualScripting;
 using UnityEngine;
-using UnityEngine.UI;
-using UnityEngine.SceneManagement;
-using Unity.PlasticSCM.Editor.WebApi;
+
 using GroundState;
 
 namespace GroundState
 {
-    //오브젝트 분류
+    //지형 종류 분류
     public enum GroundType
     {
-        test,
+        nomal,
+        slow,
+        fast,
     }
 }
 
@@ -22,36 +17,13 @@ public class GimmicGround : MonoBehaviour
 {
     private PlayerManager player;
     public GroundType groundType;
-    Timer timer;
 
-    private void Awake() {
-        timer = GameObject.Find("Time").GetComponent<Timer>();
-    }
+    private void OnCollisionStay2D(Collision2D collison) {   
+        player = collison.gameObject.GetComponent<PlayerManager>();
 
-    public void GroundEffect() 
-    {
-        if(groundType == GroundType.test) {
-            Debug.Log("느려진다.");
-        }
-    }
-
-    private void OnTriggerEnter2D(Collider2D collison) 
-    {
-        //플레이어 감지
-        if(collison.CompareTag("Player"))
+        if(player != null)
         {
-            player = collison.gameObject.GetComponent<PlayerManager>();
+            player.gimmicGround = this;
         }
-    }
-
-    private void OnTriggerExit2D(Collider2D collison) 
-    {
-        if(collison.CompareTag("Player"))
-        {
-            if(player != null)
-            {
-                player = null;
-            }
-        }
-    }
+   }
 }
