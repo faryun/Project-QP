@@ -6,7 +6,8 @@ using UnityEditor;
 using UnityEngine;
 
 public class PlayerManager : MonoBehaviour
-    {        public float movePower = 10f;
+    {        
+        public float movePower = 10f;
         public float KickBoardMovePower = 15f;
         public float jumpPower = 20f; //Set Gravity Scale in Rigidbody2D Component to 5
 
@@ -17,6 +18,7 @@ public class PlayerManager : MonoBehaviour
         bool isJumping = false;
         private bool alive = true;
         private bool isKickboard = false;
+        private int deathdepth = -50;
         public InteractionObject interObj {set {_interObj = value;}}
         private InteractionObject _interObj;
         
@@ -174,10 +176,9 @@ public class PlayerManager : MonoBehaviour
         }
         void Die()
         {
-            if (transform.position.y <= -50)
+            if (transform.position.y <= deathdepth)
             {
-                // y 좌표가 -50 이하라면 로그를 출력
-                Debug.Log("플레이어의 y 좌표가 -50 이하입니다.");
+                // y 좌표가 일정 이하라면 사망
                 alive = false;
                 isKickboard = false;
                 anim.SetBool("isKickBoard", false);
