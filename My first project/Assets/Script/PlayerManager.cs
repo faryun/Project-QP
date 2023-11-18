@@ -183,7 +183,7 @@ public class PlayerManager : MonoBehaviour
                 isKickboard = false;
                 anim.SetBool("isKickBoard", false);
                 anim.SetTrigger("die");
-                alive = false;
+                GameOver.Gamebool = true;
             }
         }
         void Restart()
