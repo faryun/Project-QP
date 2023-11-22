@@ -38,18 +38,25 @@ public class PlayerManager : MonoBehaviour
             //currentGround의 효과를 받아와서 적용
             FmovePower = currentGround.groundSpeedValue * movePower;
             FjumpPower = currentGround.groundJumpValue * jumpPower;
-            if (!PauseMenu.GameIsPaused && alive)
-            {
-                Run();
-                Jump();
-                Die();
-                if (Input.GetKeyDown(KeyCode.F))
-                {
-                    Interaction();
-                }
-            }
-            Debug.Log(currentGround.groundType);
         }
+        
+        else
+        {
+            FmovePower = movePower;
+            FjumpPower = jumpPower;
+        }
+        
+        if (!PauseMenu.GameIsPaused && alive)
+        {
+            Run();
+            Jump();
+            Die();
+            if (Input.GetKeyDown(KeyCode.F))
+            {
+                    Interaction();
+            }
+        }
+            Debug.Log(currentGround.groundType);
     }
     private void OnTriggerEnter2D(Collider2D other)
     {
