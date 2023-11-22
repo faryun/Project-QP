@@ -9,20 +9,55 @@ namespace GroundState
         nomal,
         slow,
         fast,
+        jumpUP,
+        jumpDown,
     }
 }
 
 public class GimmicGround : MonoBehaviour
 {
-    private PlayerManager player;
     public GroundType groundType;
+    [HideInInspector] public float groundSpeedValue = 1f;
+    [HideInInspector] public float groundJumpValue = 1f;
+    void Start()
+    {
+        Ground();
+    }
 
-    private void OnCollisionStay2D(Collision2D collison) {   
-        player = collison.gameObject.GetComponent<PlayerManager>();
-
-        if(player != null)
+    public void Ground()
+    {
+        //지형 효과 관련
+        switch (groundType)
         {
-            player.gimmicGround = this;
+            case GroundType.nomal:
+                groundSpeedValue = 1f;
+                groundJumpValue = 1f;
+                break;
+
+            case GroundType.fast:
+                groundSpeedValue = 1.5f;
+                groundJumpValue = 1f;
+                break;
+
+            case GroundType.slow:
+                groundSpeedValue = 0.5f;
+                groundJumpValue = 1f;
+                break;
+
+            case GroundType.jumpUP:
+                groundSpeedValue = 1f;
+                groundJumpValue = 1.5f;
+                break;
+
+            case GroundType.jumpDown:
+                groundSpeedValue = 1f;
+                groundJumpValue = 0.5f;
+                break;
+
+            default:
+                groundSpeedValue = 1f;
+                groundJumpValue = 1f;
+                break;
         }
-   }
+    }
 }
