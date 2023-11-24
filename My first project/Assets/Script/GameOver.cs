@@ -12,7 +12,10 @@ public class GameOver : MonoBehaviour
         if(Gamebool){
             GameOverUI.SetActive(true);
             Debug.Log("게임오버");
+            Time.timeScale = 0f;
         }
+
+        else Time.timeScale = 1f;
     }
 
     public void Retry(){
