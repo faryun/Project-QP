@@ -25,6 +25,6 @@ public class LevelSelect : MonoBehaviour
     public void MovetoLevelselect() {
         DataManager.Instance.data.currentLevel = level;
         SceneManager.LoadScene(destinationScene);
-        SoundManager.instance.PlaySound("Click");
+        audioSource.Play();
     }
 }

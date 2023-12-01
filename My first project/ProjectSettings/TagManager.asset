@@ -5,6 +5,7 @@ TagManager:
   serializedVersion: 2
   tags:
   - Interaction
+  - BackGround
   layers:
   - Default
   - TransparentFX
@@ -19,7 +20,7 @@ TagManager:
   - 
   - 
   - 
-  - 
+  - BackGround
   - 
   - 
   - 
@@ -39,6 +40,12 @@ TagManager:
   - 
   - 
   m_SortingLayers:
+  - name: Background
+    uniqueID: 3868903083
+    locked: 0
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: Foreground
+    uniqueID: 1940690863
     locked: 0

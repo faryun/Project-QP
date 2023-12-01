@@ -9,7 +9,7 @@ public class PlayerManager : MonoBehaviour
 {        
     public float movePower = 10f;
     public float KickBoardMovePower = 15f;
-    public float jumpPower = 20f; //Set Gravity Scale in Rigidbody2D Component to 5
+    public float jumpPower = 20f;
     //지형효과 적용 후 이동&점프 파워
     private float FmovePower;
     private float FjumpPower;
@@ -18,6 +18,7 @@ public class PlayerManager : MonoBehaviour
     Vector3 movement;
     private int direction = 1;
     bool isJumping = false;
+    bool isGrounded = false;
     private bool alive = true;
     private int deathdepth = -50;
     public InteractionObject interObj {set {_interObj = value;}}
@@ -76,6 +77,7 @@ public class PlayerManager : MonoBehaviour
         {
             // currentGround를 충돌한 객체의 GimmicGround로 설정
             currentGround = gimmicGround;
+            isGrounded = true;
         }
     }
 
@@ -86,8 +88,9 @@ public class PlayerManager : MonoBehaviour
         if (gimmicGround == currentGround)
         {
             currentGround = null;
+            isGrounded = false;
         }
-}
+    }
     void Run()
     {
             Vector3 moveVelocity = Vector3.zero;
@@ -116,7 +119,7 @@ public class PlayerManager : MonoBehaviour
     void Jump()
     {
         if ((Input.GetButtonDown("Jump") || Input.GetAxisRaw("Vertical") > 0)
-        && !anim.GetBool("isJump"))
+        && !anim.GetBool("isJump") && isGrounded)
         {
             SoundManager.instance.PlaySound("Jump");
             isJumping = true;
