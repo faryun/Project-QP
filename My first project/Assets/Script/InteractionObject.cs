@@ -13,11 +13,8 @@ namespace ObjectState
     //오브젝트 분류
     public enum ObjectType
     {
-        etest,
-        etest1,
-        hidden,
+        lever,
         finish,
-
     }
 }
 
@@ -29,6 +26,7 @@ public class InteractionObject : MonoBehaviour
     public SpriteRenderer spriteRenderer;
     public Sprite sprite;
     private bool trigger = false;
+    public AudioSource interactionSound;
     Timer timer;
 
     private void Awake() {
@@ -38,10 +36,6 @@ public class InteractionObject : MonoBehaviour
     public void Interaction() 
     {
         //상호작용 관련
-        if(objectType == ObjectType.etest) {
-            Debug.Log("버섯이다.");
-        }
-
         if(objectType == ObjectType.finish) {
             timer.end = true;
             if(DataManager.Instance.data.time[DataManager.Instance.data.currentLevel] == 0 || timer.currentTime < DataManager.Instance.data.time[DataManager.Instance.data.currentLevel]) {
@@ -51,14 +45,16 @@ public class InteractionObject : MonoBehaviour
             DataManager.Instance.data.isUnlock[DataManager.Instance.data.currentLevel + 1] = true;
             DataManager.Instance.SaveGameData();
             Debug.Log("끝이다.");
+            SoundManager.instance.PlaySound("Lever");
             SceneManager.LoadScene("LevelSelect");
         }
 
-        if(objectType == ObjectType.hidden)
+        if(objectType == ObjectType.lever)
         {    
             if(!trigger)
             {
                 Debug.Log("무언가가 작동한거 같다.");
+                SoundManager.instance.PlaySound("Lever");
                 spriteRenderer.sprite = sprite; //img change
                 Object.SetActive(true);
                 trigger = true;

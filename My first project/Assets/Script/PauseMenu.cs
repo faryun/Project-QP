@@ -20,6 +20,7 @@ public class PauseMenu : MonoBehaviour{
 
     public void Resume(){
         Debug.Log("재시작");
+        SoundManager.instance.PlaySound("Click");
         pauseMenuCanvas.SetActive(false);
         Time.timeScale = 1f;
         GameIsPaused = false;
@@ -32,17 +33,15 @@ public class PauseMenu : MonoBehaviour{
         GameIsPaused = true;
     }
 
-    public void ToSettingMenu(){
-        Debug.Log("아직 미구현입니다...");
-    }
-
     public void ToLevelSelect(){
         Debug.Log("레벨 선택 이동");
+        SoundManager.instance.PlaySound("Click");
         Time.timeScale = 1f;
         SceneManager.LoadScene("LevelSelect");
     }
 
     public void QuitGame(){
+        SoundManager.instance.PlaySound("Click");
         Debug.Log("게임 나가기 성공");
         Application.Quit();
     }

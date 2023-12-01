@@ -17,7 +17,6 @@ public class Progress : MonoBehaviour {
 
     float current = 0;
     float progress = 0;
-    int buttonAlpha = 0;
 
     private void FixedUpdate() {
 
@@ -25,7 +24,7 @@ public class Progress : MonoBehaviour {
             current += Time.deltaTime * 0.5f;
             progress = current / progressTime;
 
-            textProgressData.text = $"·ÎµùÁß.. {sliderProgress.value * 100:F0}%";
+            textProgressData.text = $"Loding : {sliderProgress.value * 100:F0}%";
             sliderProgress.value = Mathf.Lerp(0, 1, progress);
         }  
 

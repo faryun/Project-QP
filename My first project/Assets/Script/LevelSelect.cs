@@ -6,6 +6,8 @@ using UnityEngine.SceneManagement;
 
 public class LevelSelect : MonoBehaviour
 {
+    public AudioSource audioSource;
+
     [SerializeField]
     private string destinationScene;
     [SerializeField]
@@ -18,10 +20,11 @@ public class LevelSelect : MonoBehaviour
         DataManager.Instance.data.isUnlock[0] = true;
     }
     private void Start() {
-        record.text = (DataManager.Instance.data.time[level] == 0) ? "(not clear)" : $"clear!\n {DataManager.Instance.data.time[level]:F2}√ ";
+        record.text = (DataManager.Instance.data.time[level] == 0) ? "(not clear)" : $"clear!\n {DataManager.Instance.data.time[level]:F2}sec";
     }
     public void MovetoLevelselect() {
         DataManager.Instance.data.currentLevel = level;
         SceneManager.LoadScene(destinationScene);
+        SoundManager.instance.PlaySound("Click");
     }
 }

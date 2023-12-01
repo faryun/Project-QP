@@ -387,6 +387,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2763300d859a59a42801c87ee33846b1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  audioSource: {fileID: 0}
   destinationScene: Level_5
   level: 5
   record: {fileID: 178950755}
@@ -1049,6 +1050,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2763300d859a59a42801c87ee33846b1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  audioSource: {fileID: 0}
   destinationScene: Level_0(Tutorial)
   level: 0
   record: {fileID: 1257887340}
@@ -1389,6 +1391,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2763300d859a59a42801c87ee33846b1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  audioSource: {fileID: 0}
   destinationScene: Level_2
   level: 2
   record: {fileID: 945590916}
@@ -2482,6 +2485,67 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 952479395}
   m_CullTransparentMesh: 1
+--- !u!1001 &1036956924
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 881030315175544428, guid: ec5754b5f56109340bf513070d0ef119, type: 3}
+      propertyPath: m_Name
+      value: SoundManager
+      objectReference: {fileID: 0}
+    - target: {fileID: 2416870175845324031, guid: ec5754b5f56109340bf513070d0ef119, type: 3}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: c9db331b8d4776e4686d97eff99b1e9a, type: 3}
+    - target: {fileID: 7927914416743377995, guid: ec5754b5f56109340bf513070d0ef119, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -1.0780029
+      objectReference: {fileID: 0}
+    - target: {fileID: 7927914416743377995, guid: ec5754b5f56109340bf513070d0ef119, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 6.033722
+      objectReference: {fileID: 0}
+    - target: {fileID: 7927914416743377995, guid: ec5754b5f56109340bf513070d0ef119, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0.2602959
+      objectReference: {fileID: 0}
+    - target: {fileID: 7927914416743377995, guid: ec5754b5f56109340bf513070d0ef119, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7927914416743377995, guid: ec5754b5f56109340bf513070d0ef119, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7927914416743377995, guid: ec5754b5f56109340bf513070d0ef119, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7927914416743377995, guid: ec5754b5f56109340bf513070d0ef119, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7927914416743377995, guid: ec5754b5f56109340bf513070d0ef119, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7927914416743377995, guid: ec5754b5f56109340bf513070d0ef119, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7927914416743377995, guid: ec5754b5f56109340bf513070d0ef119, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: ec5754b5f56109340bf513070d0ef119, type: 3}
 --- !u!1 &1054822162
 GameObject:
   m_ObjectHideFlags: 0
@@ -2536,6 +2600,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2763300d859a59a42801c87ee33846b1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  audioSource: {fileID: 0}
   destinationScene: Level_1
   level: 1
   record: {fileID: 1715156596}
@@ -2879,6 +2944,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2763300d859a59a42801c87ee33846b1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  audioSource: {fileID: 0}
   destinationScene: Level_4
   level: 4
   record: {fileID: 1807280863}
@@ -3581,6 +3647,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2763300d859a59a42801c87ee33846b1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  audioSource: {fileID: 0}
   destinationScene: Level_7
   level: 7
   record: {fileID: 149936145}
@@ -3985,6 +4052,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2763300d859a59a42801c87ee33846b1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  audioSource: {fileID: 0}
   destinationScene: Level_6
   level: 6
   record: {fileID: 336994780}
@@ -4151,6 +4219,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2763300d859a59a42801c87ee33846b1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  audioSource: {fileID: 0}
   destinationScene: Level_3
   level: 3
   record: {fileID: 492926983}
@@ -4272,3 +4341,4 @@ SceneRoots:
   - {fileID: 545361786}
   - {fileID: 1883128760}
   - {fileID: 596124196}
+  - {fileID: 1036956924}

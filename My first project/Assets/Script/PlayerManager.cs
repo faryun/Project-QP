@@ -19,7 +19,6 @@ public class PlayerManager : MonoBehaviour
     private int direction = 1;
     bool isJumping = false;
     private bool alive = true;
-    private bool isKickboard = false;
     private int deathdepth = -50;
     public InteractionObject interObj {set {_interObj = value;}}
     private InteractionObject _interObj;
@@ -56,7 +55,6 @@ public class PlayerManager : MonoBehaviour
                     Interaction();
             }
         }
-            Debug.Log(currentGround.groundType);
     }
     private void OnTriggerEnter2D(Collider2D other)
     {
@@ -90,35 +88,23 @@ public class PlayerManager : MonoBehaviour
             currentGround = null;
         }
 }
-    void KickBoard()
-    {
-        if (Input.GetKeyDown(KeyCode.Alpha4) && isKickboard)
-        {
-            isKickboard = false;
-            anim.SetBool("isKickBoard", false);
-        }
-        else if (Input.GetKeyDown(KeyCode.Alpha4) && !isKickboard)
-        {
-            isKickboard = true;
-            anim.SetBool("isKickBoard", true);
-        }
-    }
     void Run()
     {
-        if (!isKickboard)
-        {
             Vector3 moveVelocity = Vector3.zero;
             anim.SetBool("isRun", false);
             if (Input.GetAxisRaw("Horizontal") < 0)
             {
+                SoundManager.instance.PlaySound("Walk");
                 direction = -1;
                 moveVelocity = Vector3.left;
                 transform.localScale = new Vector3(direction, 1, 1);
                 if (!anim.GetBool("isJump"))
                     anim.SetBool("isRun", true);
             }
-            if (Input.GetAxisRaw("Horizontal") > 0)
+            
+            else if (Input.GetAxisRaw("Horizontal") > 0)
             {
+                SoundManager.instance.PlaySound("Walk");
                 direction = 1;
                 moveVelocity = Vector3.right;
                 transform.localScale = new Vector3(direction, 1, 1);
@@ -126,30 +112,13 @@ public class PlayerManager : MonoBehaviour
                     anim.SetBool("isRun", true);
             }
             transform.position += moveVelocity * FmovePower * Time.deltaTime;
-        }
-        if (isKickboard)
-        {
-            Vector3 moveVelocity = Vector3.zero;
-            if (Input.GetAxisRaw("Horizontal") < 0)
-            {
-                direction = -1;
-                moveVelocity = Vector3.left;
-                transform.localScale = new Vector3(direction, 1, 1);
-            }
-            if (Input.GetAxisRaw("Horizontal") > 0)
-            {
-                direction = 1;
-                moveVelocity = Vector3.right;
-                transform.localScale = new Vector3(direction, 1, 1);
-            }
-            transform.position += moveVelocity * KickBoardMovePower * Time.deltaTime;
-        }
     }
     void Jump()
     {
         if ((Input.GetButtonDown("Jump") || Input.GetAxisRaw("Vertical") > 0)
         && !anim.GetBool("isJump"))
         {
+            SoundManager.instance.PlaySound("Jump");
             isJumping = true;
             anim.SetBool("isJump", true);
         }
@@ -161,13 +130,6 @@ public class PlayerManager : MonoBehaviour
         Vector2 jumpVelocity = new Vector2(0, FjumpPower);
         rb.AddForce(jumpVelocity, ForceMode2D.Impulse);
         isJumping = false;
-    }
-    void Attack()
-    {
-        if (Input.GetKeyDown(KeyCode.Alpha1))
-        {
-            anim.SetTrigger("attack");
-        }
     }
     void Hurt()
     {
@@ -186,20 +148,9 @@ public class PlayerManager : MonoBehaviour
         {
             // y 좌표가 일정 이하라면 사망
             alive = false;
-            isKickboard = false;
             anim.SetBool("isKickBoard", false);
             anim.SetTrigger("die");
             GameOver.Gamebool = true;
-        }
-    }
-    void Restart()
-    {
-        if (Input.GetKeyDown(KeyCode.Alpha0))
-        {
-            isKickboard = false;
-            anim.SetBool("isKickBoard", false);
-            anim.SetTrigger("idle");
-            alive = true;
         }
     }
 }

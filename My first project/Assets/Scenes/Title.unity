@@ -999,7 +999,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "\uAC8C\uC784 \uC81C\uBAA9"
+  m_text: Plan, EXCUTE
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: c47cf29aeb8bd0a41b6517743af64b09, type: 2}
   m_sharedMaterial: {fileID: 8474425194766171864, guid: c47cf29aeb8bd0a41b6517743af64b09, type: 2}

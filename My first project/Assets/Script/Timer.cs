@@ -8,8 +8,6 @@ using TMPro;
 public class Timer : MonoBehaviour
 {
     [SerializeField]
-    private Camera camera;
-    [SerializeField]
     private TextMeshProUGUI timerUI;
 
     public bool end = false;
