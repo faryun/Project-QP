@@ -123,6 +123,17 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!114 &251502586 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7435195622948413561, guid: 72e87da078b5b6c44a2010fffa5d8a34, type: 3}
+  m_PrefabInstance: {fileID: 927754588812269415}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 67db9e8f0e2ae9c40bc1e2b64352a6b4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &256069669
 GameObject:
   m_ObjectHideFlags: 0
@@ -3644,6 +3655,17 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1334497510}
   m_CullTransparentMesh: 1
+--- !u!114 &1346566748 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7406988963415654447, guid: 72e87da078b5b6c44a2010fffa5d8a34, type: 3}
+  m_PrefabInstance: {fileID: 927754588812269415}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 67db9e8f0e2ae9c40bc1e2b64352a6b4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1359487669
 GameObject:
   m_ObjectHideFlags: 0
@@ -4715,6 +4737,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 351792254609358307, guid: 72e87da078b5b6c44a2010fffa5d8a34, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 351792254609358307, guid: 72e87da078b5b6c44a2010fffa5d8a34, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 646916251575385968, guid: 72e87da078b5b6c44a2010fffa5d8a34, type: 3}
       propertyPath: m_Pivot.x
       value: 0
@@ -4795,10 +4825,46 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2262934750994251164, guid: 72e87da078b5b6c44a2010fffa5d8a34, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2262934750994251164, guid: 72e87da078b5b6c44a2010fffa5d8a34, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2262934750994251164, guid: 72e87da078b5b6c44a2010fffa5d8a34, type: 3}
+      propertyPath: m_AnchorMin.x
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3223779319271387367, guid: 72e87da078b5b6c44a2010fffa5d8a34, type: 3}
       propertyPath: m_Camera
       value: 
       objectReference: {fileID: 1909967229}
+    - target: {fileID: 3646778700354610832, guid: 72e87da078b5b6c44a2010fffa5d8a34, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4940254334635428342, guid: 72e87da078b5b6c44a2010fffa5d8a34, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4940254334635428342, guid: 72e87da078b5b6c44a2010fffa5d8a34, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6580626899998469025, guid: 72e87da078b5b6c44a2010fffa5d8a34, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6580626899998469025, guid: 72e87da078b5b6c44a2010fffa5d8a34, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6580626899998469025, guid: 72e87da078b5b6c44a2010fffa5d8a34, type: 3}
+      propertyPath: m_AnchorMin.x
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7714426990069676679, guid: 72e87da078b5b6c44a2010fffa5d8a34, type: 3}
       propertyPath: m_Name
       value: PauseUI
@@ -4925,6 +4991,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: SoundManager
       objectReference: {fileID: 0}
+    - target: {fileID: 2822224719182965762, guid: ec5754b5f56109340bf513070d0ef119, type: 3}
+      propertyPath: bgm_slider
+      value: 
+      objectReference: {fileID: 251502586}
+    - target: {fileID: 2822224719182965762, guid: ec5754b5f56109340bf513070d0ef119, type: 3}
+      propertyPath: sfx_slider
+      value: 
+      objectReference: {fileID: 1346566748}
     - target: {fileID: 7927914416743377995, guid: ec5754b5f56109340bf513070d0ef119, type: 3}
       propertyPath: m_LocalPosition.x
       value: -1.0780029
