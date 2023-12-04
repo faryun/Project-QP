@@ -14,7 +14,17 @@ public class SoundManager : MonoBehaviour
 
     void Awake()
     {
-        instance = this;
+        //사운드 전체 관리를 위한 싱글톤
+         if(instance == null)
+        {
+            instance = this;
+            DontDestroyOnLoad(this.gameObject);
+        }
+        
+        else if(instance != this)
+        {
+            Destroy(this.gameObject);
+        }
 
         bgm_player = GameObject.Find("BGM Player").GetComponent<AudioSource>();
         sfx_player = GameObject.Find("SFX Player").GetComponent<AudioSource>();
@@ -45,6 +55,7 @@ public class SoundManager : MonoBehaviour
     void ChangeBgmSound(float value)
     {
         bgm_player.volume = value;
+        bgm_slider.value = value;
     }
 
     void ChangeSfxSound(float value)
