@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
-using Unity.PlasticSCM.Editor.WebApi;
+
 
 public class FinishScript : MonoBehaviour
 {
@@ -23,7 +23,6 @@ public class FinishScript : MonoBehaviour
             }
             DataManager.Instance.data.isUnlock[DataManager.Instance.data.currentLevel + 1] = true;
             DataManager.Instance.SaveGameData();
-            Debug.Log("끝이다.");
             SoundManager.instance.PlaySound("Lever");
             SceneManager.LoadScene("LevelSelect");
     }

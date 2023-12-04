@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class FromTitleToLevelselect : MonoBehaviour
+public class FromTitleToMainMenu : MonoBehaviour
 {
     public void MovetoLevelselect() {
-        SceneManager.LoadScene("LevelSelect");
+        SceneManager.LoadScene("MainMenu");
     }
 }

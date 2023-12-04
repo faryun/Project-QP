@@ -255,7 +255,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "\uB85C\uB529\uC911.. 00%"
+  m_text: 'Loding : 00%'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: c47cf29aeb8bd0a41b6517743af64b09, type: 2}
   m_sharedMaterial: {fileID: 8474425194766171864, guid: c47cf29aeb8bd0a41b6517743af64b09, type: 2}
@@ -472,7 +472,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 0}
-  m_AnchoredPosition: {x: 0, y: 39.325012}
+  m_AnchoredPosition: {x: 0, y: 39.32495}
   m_SizeDelta: {x: -773, y: 40}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &310644860
