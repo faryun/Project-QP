@@ -17,6 +17,5 @@ public class SavedData : MonoBehaviour
     public void ChapterUnlock(int chapterNum) {
         DataManager.Instance.data.isUnlock[chapterNum] = true;
         DataManager.Instance.SaveGameData();
-
     }
 }

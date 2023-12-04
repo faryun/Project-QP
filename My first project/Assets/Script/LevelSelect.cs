@@ -21,14 +21,15 @@ public class LevelSelect : MonoBehaviour
         record.text = (DataManager.Instance.data.time[level] == 0) ? "(not clear)" : $"clear!\n {DataManager.Instance.data.time[level]:F2}sec";
     }
     public void MovetoLevelselect() {
-        SoundManager.instance.PlaySound("Click");
+        SoundManager.instance.PlaySFX("Click");
+        SoundManager.instance.PlayBGM("Stage");
         DataManager.Instance.data.currentLevel = level;
         SceneManager.LoadScene(destinationScene);
     }
 
     public void Back()
     {
-        SoundManager.instance.PlaySound("Click");
+        SoundManager.instance.PlaySFX("Click");
         SceneManager.LoadScene("MainMenu");
     }
 }

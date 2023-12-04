@@ -23,7 +23,7 @@ public class FinishScript : MonoBehaviour
             }
             DataManager.Instance.data.isUnlock[DataManager.Instance.data.currentLevel + 1] = true;
             DataManager.Instance.SaveGameData();
-            SoundManager.instance.PlaySound("Lever");
+            SoundManager.instance.PlaySFX("Lever");
             SceneManager.LoadScene("LevelSelect");
     }
 }

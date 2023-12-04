@@ -3428,6 +3428,7 @@ GameObject:
   - component: {fileID: 1359487672}
   - component: {fileID: 1359487670}
   - component: {fileID: 1359487675}
+  - component: {fileID: 1359487676}
   m_Layer: 0
   m_Name: Moving1
   m_TagString: Untagged
@@ -3568,6 +3569,21 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 2, y: 1.25}
   m_EdgeRadius: 0
+--- !u!114 &1359487676
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1359487669}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 825733f2ad6ba7742af4eb10e42d66b0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  groundType: 1
+  groundSpeedValue: 1
+  groundJumpValue: 1
 --- !u!1 &1409698705
 GameObject:
   m_ObjectHideFlags: 0

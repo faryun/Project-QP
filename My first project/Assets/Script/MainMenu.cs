@@ -5,32 +5,27 @@ using UnityEngine.SceneManagement;
 
 public class MainMenu : MonoBehaviour
 {
-    public GameObject menuUI;
-    public GameObject optionUI;
-
     public void Play()
     {
-        SoundManager.instance.PlaySound("Click");
+        SoundManager.instance.PlaySFX("Click");
         SceneManager.LoadScene("LevelSelect");
     }
 
-    public void OptionUI()
+    public void Option()
     {
-        SoundManager.instance.PlaySound("Click");
-        menuUI.SetActive(false);
-        optionUI.SetActive(true);
+        SoundManager.instance.PlaySFX("Click");
+        SceneManager.LoadScene("Option");
     }
 
-    public void MenuUI()
+    public void Back()
     {
-        SoundManager.instance.PlaySound("Click");
-        menuUI.SetActive(true);
-        optionUI.SetActive(false);
+        SoundManager.instance.PlaySFX("Click");
+        SceneManager.LoadScene("MainMenu");
     }
 
     public void Exit()
     {
-        SoundManager.instance.PlaySound("Click");
+        SoundManager.instance.PlaySFX("Click");
         Debug.Log("게임 나가기 성공");
         Application.Quit();
     }

@@ -32,7 +32,7 @@ public class InteractionObject : MonoBehaviour
             if(!trigger)
             {
                 Debug.Log("무언가가 작동한거 같다.");
-                SoundManager.instance.PlaySound("Lever");
+                SoundManager.instance.PlaySFX("Lever");
                 spriteRenderer.sprite = sprite; //img change
                 Object.SetActive(true);
                 trigger = true;

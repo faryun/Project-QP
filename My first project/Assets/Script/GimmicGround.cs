@@ -7,6 +7,7 @@ namespace GroundState
     public enum GroundType
     {
         nomal,
+        moving,
         slow,
         fast,
         jumpUP,
@@ -30,6 +31,11 @@ public class GimmicGround : MonoBehaviour
         switch (groundType)
         {
             case GroundType.nomal:
+                groundSpeedValue = 1f;
+                groundJumpValue = 1f;
+                break;
+
+            case GroundType.moving:
                 groundSpeedValue = 1f;
                 groundJumpValue = 1f;
                 break;

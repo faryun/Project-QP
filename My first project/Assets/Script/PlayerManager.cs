@@ -97,7 +97,7 @@ public class PlayerManager : MonoBehaviour
             anim.SetBool("isRun", false);
             if (Input.GetAxisRaw("Horizontal") < 0)
             {
-                SoundManager.instance.PlaySound("Walk");
+                SoundManager.instance.PlaySFX("Walk");
                 direction = -1;
                 moveVelocity = Vector3.left;
                 transform.localScale = new Vector3(direction, 1, 1);
@@ -107,7 +107,7 @@ public class PlayerManager : MonoBehaviour
             
             else if (Input.GetAxisRaw("Horizontal") > 0)
             {
-                SoundManager.instance.PlaySound("Walk");
+                SoundManager.instance.PlaySFX("Walk");
                 direction = 1;
                 moveVelocity = Vector3.right;
                 transform.localScale = new Vector3(direction, 1, 1);
@@ -121,7 +121,7 @@ public class PlayerManager : MonoBehaviour
         if ((Input.GetButtonDown("Jump") || Input.GetAxisRaw("Vertical") > 0)
         && !anim.GetBool("isJump") && isGrounded)
         {
-            SoundManager.instance.PlaySound("Jump");
+            SoundManager.instance.PlaySFX("Jump");
             isJumping = true;
             anim.SetBool("isJump", true);
         }

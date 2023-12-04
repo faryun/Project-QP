@@ -176,7 +176,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bgm_slider: {fileID: 0}
   sfx_slider: {fileID: 0}
-  audio_clips:
+  bgm_audio_clips:
+  - {fileID: 8300000, guid: c9db331b8d4776e4686d97eff99b1e9a, type: 3}
+  - {fileID: 8300000, guid: 9bbb97ffc14db2248a0dbdeb685d7fad, type: 3}
+  sfx_audio_clips:
   - {fileID: 8300000, guid: 4b4b33d2092a3784f98310fb1ea098db, type: 3}
   - {fileID: 8300000, guid: a876d724feaacc04387e8702dac26817, type: 3}
   - {fileID: 8300000, guid: e636886b9acabd14aa2c1c3389744cde, type: 3}

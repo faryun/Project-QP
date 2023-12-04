@@ -20,7 +20,7 @@ public class PauseMenu : MonoBehaviour{
 
     public void Resume(){
         Debug.Log("재시작");
-        SoundManager.instance.PlaySound("Click");
+        SoundManager.instance.PlaySFX("Click");
         pauseMenuCanvas.SetActive(false);
         Time.timeScale = 1f;
         GameIsPaused = false;
@@ -35,13 +35,14 @@ public class PauseMenu : MonoBehaviour{
 
     public void ToLevelSelect(){
         Debug.Log("레벨 선택 이동");
-        SoundManager.instance.PlaySound("Click");
+        SoundManager.instance.PlaySFX("Click");
         Time.timeScale = 1f;
         SceneManager.LoadScene("LevelSelect");
+        SoundManager.instance.PlayBGM("Main");
     }
 
     public void QuitGame(){
-        SoundManager.instance.PlaySound("Click");
+        SoundManager.instance.PlaySFX("Click");
         Debug.Log("게임 나가기 성공");
         Application.Quit();
     }
