@@ -28,6 +28,7 @@ public class PauseMenu : MonoBehaviour{
 
     public void Pause(){
         Debug.Log("일시정지");
+        SoundManager.instance.PlaySFX("Click");
         pauseMenuCanvas.SetActive(true);
         Time.timeScale = 0f;
         GameIsPaused = true;

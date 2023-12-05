@@ -1,16 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
 
 public class SoundManager : MonoBehaviour
 {
-    AudioSource bgm_player;
-    AudioSource sfx_player;
-    
-    public Slider bgm_slider;
-    public Slider sfx_slider;
     public static SoundManager instance = null;
+    public AudioSource bgm_player;
+    public AudioSource sfx_player;
 
     void Awake()
     {
@@ -25,20 +21,13 @@ public class SoundManager : MonoBehaviour
         {
             Destroy(this.gameObject);
         }
-
-        bgm_player = GameObject.Find("BGM Player").GetComponent<AudioSource>();
-        sfx_player = GameObject.Find("SFX Player").GetComponent<AudioSource>();
-
-        bgm_slider = bgm_slider.GetComponent<Slider>();
-        sfx_slider = sfx_slider.GetComponent<Slider>();
-
-        bgm_slider.onValueChanged.AddListener(ChangeBgmSound);
-        sfx_slider.onValueChanged.AddListener(ChangeSfxSound);
     }
 
+    //사운드 저장 배열
     public AudioClip[] bgm_audio_clips;
     public AudioClip[] sfx_audio_clips;
 
+    //배경음악 재생
     public void PlayBGM(string type)
     {
         int index = 0;
@@ -52,6 +41,7 @@ public class SoundManager : MonoBehaviour
         bgm_player.Play();
     }
     
+    //효과음 재생
     public void PlaySFX(string type)
     {
         int index = 0;
@@ -65,15 +55,5 @@ public class SoundManager : MonoBehaviour
 
         sfx_player.clip = sfx_audio_clips[index];
         if(!sfx_player.isPlaying) sfx_player.Play();
-    }
-
-    void ChangeBgmSound(float value)
-    {
-        bgm_player.volume = value;
-    }
-
-    void ChangeSfxSound(float value)
-    {
-        sfx_player.volume = value;
     }
 }
