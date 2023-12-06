@@ -20,7 +20,7 @@ public class PlayerManager : MonoBehaviour
     bool isJumping = false;
     bool isGrounded = false;
     private bool alive = true;
-    private int deathdepth = -50;
+    private int deathdepth = -100;
     public InteractionObject interObj {set {_interObj = value;}}
     private InteractionObject _interObj;
     private GimmicGround currentGround;
