@@ -52,7 +52,7 @@ public class GimmicGround : MonoBehaviour
 
             case GroundType.jumpUP:
                 groundSpeedValue = 1f;
-                groundJumpValue = 1.5f;
+                groundJumpValue = 2f;
                 break;
 
             case GroundType.jumpDown:

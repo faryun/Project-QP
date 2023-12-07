@@ -17,12 +17,15 @@ namespace ObjectState
 
 public class InteractionObject : MonoBehaviour
 {
+    public static event Action<int, bool> OnInteractionEvent;
+    public int objectIndex;
+    public bool trigger = false;
     private PlayerManager player;
     public ObjectType objectType;
-    public GameObject Object;
+    public GameObject affectObject;
     public SpriteRenderer spriteRenderer;
-    public Sprite sprite;
-    private bool trigger = false;
+    public Sprite onSprite;
+    public Sprite offSprite;
     
 
     public void Interaction() 
@@ -34,9 +37,33 @@ public class InteractionObject : MonoBehaviour
             {
                 Debug.Log("무언가가 작동한거 같다.");
                 SoundManager.instance.PlaySFX("Lever");
-                spriteRenderer.sprite = sprite; //img change
-                Object.SetActive(true);
+                spriteRenderer.sprite = onSprite; //img change
+                affectObject.SetActive(true);
                 trigger = true;
+                OnInteractionEvent?.Invoke(objectIndex,trigger);
+            }
+
+            else return;
+        }
+
+        //상호작용 관련
+        if(objectType == ObjectType.Repeat)
+        {    
+            if(!trigger)
+            {
+                Debug.Log("무언가가 작동한거 같다.");
+                SoundManager.instance.PlaySFX("Lever");
+                spriteRenderer.sprite = onSprite; //img change
+                trigger = true;
+                OnInteractionEvent?.Invoke(objectIndex,trigger);
+            }
+
+            else if(trigger) {
+                Debug.Log("무언가가 작동한거 같다.");
+                SoundManager.instance.PlaySFX("Lever");
+                spriteRenderer.sprite = offSprite; //img change
+                trigger = false;
+                OnInteractionEvent?.Invoke(objectIndex,trigger);
             }
 
             else return;

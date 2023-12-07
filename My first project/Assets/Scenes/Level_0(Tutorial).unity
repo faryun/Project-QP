@@ -154,10 +154,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a431435ed7e1e3348aeac189b2f72209, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  objectIndex: 0
+  trigger: 0
   objectType: 0
-  Object: {fileID: 1359487669}
+  affectObject: {fileID: 1359487669}
   spriteRenderer: {fileID: 256069672}
-  sprite: {fileID: 21300024, guid: ae3918a914038694d852d0bb81f62473, type: 3}
+  onSprite: {fileID: 21300024, guid: ae3918a914038694d852d0bb81f62473, type: 3}
+  offSprite: {fileID: 0}
 --- !u!61 &256069671
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -3033,10 +3036,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a431435ed7e1e3348aeac189b2f72209, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  objectIndex: 0
+  trigger: 0
   objectType: 0
-  Object: {fileID: 0}
+  affectObject: {fileID: 0}
   spriteRenderer: {fileID: 0}
-  sprite: {fileID: 0}
+  onSprite: {fileID: 0}
+  offSprite: {fileID: 0}
 --- !u!66 &1041057608
 CompositeCollider2D:
   m_ObjectHideFlags: 0
