@@ -10,7 +10,8 @@ namespace ObjectState
     //오브젝트 분류
     public enum ObjectType
     {
-        lever,
+        Once,
+        Repeat,
     }
 }
 
@@ -27,7 +28,7 @@ public class InteractionObject : MonoBehaviour
     public void Interaction() 
     {
         //상호작용 관련
-        if(objectType == ObjectType.lever)
+        if(objectType == ObjectType.Once)
         {    
             if(!trigger)
             {
