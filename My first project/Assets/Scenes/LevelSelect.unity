@@ -3840,7 +3840,7 @@ MonoBehaviour:
   destinationScene: Level_7
   level: 7
   record: {fileID: 149936145}
-  nextLevelButton: {fileID: 0}
+  nextLevelButton: {fileID: 1806770994}
 --- !u!114 &1806770993
 MonoBehaviour:
   m_ObjectHideFlags: 0
