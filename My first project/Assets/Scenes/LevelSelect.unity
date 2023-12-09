@@ -390,6 +390,7 @@ MonoBehaviour:
   destinationScene: Level_5
   level: 5
   record: {fileID: 178950755}
+  nextLevelButton: {fileID: 1940522532}
 --- !u!114 &71690735
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1052,6 +1053,7 @@ MonoBehaviour:
   destinationScene: Level_0(Tutorial)
   level: 0
   record: {fileID: 1257887340}
+  nextLevelButton: {fileID: 1054822166}
 --- !u!114 &213883156
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1392,6 +1394,7 @@ MonoBehaviour:
   destinationScene: Level_2
   level: 2
   record: {fileID: 945590916}
+  nextLevelButton: {fileID: 2127125762}
 --- !u!114 &429353964
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2094,6 +2097,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 596124196}
+  - component: {fileID: 596124197}
   m_Layer: 0
   m_Name: SavedData
   m_TagString: Untagged
@@ -2116,6 +2120,18 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &596124197
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 596124195}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 67310aed8cbde264ab74de74f2436c79, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &602376332
 GameObject:
   m_ObjectHideFlags: 0
@@ -2318,51 +2334,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 609391628}
   m_CullTransparentMesh: 1
---- !u!1 &760523707
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 760523709}
-  - component: {fileID: 760523708}
-  m_Layer: 0
-  m_Name: TitleScene
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &760523708
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 760523707}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5b250144b25c48d40ae63275eeb8282a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  progress: {fileID: 0}
---- !u!4 &760523709
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 760523707}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 786.5, y: 449, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &945590914
 GameObject:
   m_ObjectHideFlags: 0
@@ -2688,6 +2659,7 @@ MonoBehaviour:
   destinationScene: Level_1
   level: 1
   record: {fileID: 1715156596}
+  nextLevelButton: {fileID: 429353965}
 --- !u!114 &1054822165
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3165,6 +3137,7 @@ MonoBehaviour:
   destinationScene: Level_4
   level: 4
   record: {fileID: 1807280863}
+  nextLevelButton: {fileID: 71690736}
 --- !u!114 &1267449612
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3867,6 +3840,7 @@ MonoBehaviour:
   destinationScene: Level_7
   level: 7
   record: {fileID: 149936145}
+  nextLevelButton: {fileID: 0}
 --- !u!114 &1806770993
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4272,6 +4246,7 @@ MonoBehaviour:
   destinationScene: Level_6
   level: 6
   record: {fileID: 336994780}
+  nextLevelButton: {fileID: 1806770994}
 --- !u!114 &1940522531
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4470,6 +4445,7 @@ MonoBehaviour:
   destinationScene: Level_3
   level: 3
   record: {fileID: 492926983}
+  nextLevelButton: {fileID: 1267449613}
 --- !u!114 &2127125761
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4584,7 +4560,6 @@ SceneRoots:
   m_ObjectHideFlags: 0
   m_Roots:
   - {fileID: 602376335}
-  - {fileID: 760523709}
   - {fileID: 545361786}
   - {fileID: 1971103286}
   - {fileID: 596124196}
