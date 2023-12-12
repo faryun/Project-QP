@@ -1491,8 +1491,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 61e2b018d3c07c643a93e8186a12216f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tilemap: {fileID: 1000361356}
-  targetTilePosition: {x: -95, y: -47, z: 0}
 --- !u!66 &1000361352
 CompositeCollider2D:
   m_ObjectHideFlags: 0
