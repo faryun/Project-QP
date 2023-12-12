@@ -4,12 +4,14 @@ using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEditor;
 using UnityEngine;
+using UnityEngine.Tilemaps;
 
 public class PlayerManager : MonoBehaviour
 {        
     public float movePower = 10f;
     public float KickBoardMovePower = 15f;
     public float jumpPower = 20f;
+    public Tilemap ground2;
     //지형효과 적용 후 이동&점프 파워
     private float FmovePower;
     private float FjumpPower;
@@ -56,6 +58,15 @@ public class PlayerManager : MonoBehaviour
                     Interaction();
             }
         }
+
+        if (transform.position.x < -100 && transform.position.x > -102 && transform.position.y < -45 && transform.position.y > -49) {
+            // Tilemap이 속한 GameObject를 가져옴
+            GameObject tilemapGameObject = ground2.gameObject;
+
+            // Tilemap을 활성화 또는 비활성화
+            tilemapGameObject.SetActive(false);
+        }
+
     }
     private void OnTriggerEnter2D(Collider2D other)
     {
@@ -79,6 +90,9 @@ public class PlayerManager : MonoBehaviour
             currentGround = gimmicGround;
             isGrounded = true;
         }
+        else if (collision.gameObject.tag == "Box") {
+            isGrounded = true;
+        }
     }
 
     private void OnCollisionExit2D(Collision2D collision)
@@ -88,6 +102,9 @@ public class PlayerManager : MonoBehaviour
         if (gimmicGround == currentGround)
         {
             currentGround = null;
+            isGrounded = false;
+        }
+        else if(collision.gameObject.tag == "Box") {
             isGrounded = false;
         }
     }

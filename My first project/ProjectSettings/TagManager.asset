@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Interaction
   - BackGround
+  - Box
   layers:
   - Default
   - TransparentFX

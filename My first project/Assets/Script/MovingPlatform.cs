@@ -13,7 +13,8 @@ public enum MovementType {
 // Movement orientation for line movement type
 public enum LineMovementOrientation {
     horizontal,
-    vertical
+    vertical,
+    verticalRandom
 }
 
 // Movement orientation for circular movement type
@@ -26,7 +27,9 @@ public class MovingPlatform : MonoBehaviour
 {
 
     // General vars (affect all types of movemens)
-    
+    float randomSpeed;
+    float randomDistance;
+
     [SerializeField]
     MovementType movementType;
     public float speed = 2f;
@@ -34,8 +37,8 @@ public class MovingPlatform : MonoBehaviour
     public Color gizmoColor = Color.yellow;
 
     // Line movement vars
-    public LineMovementOrientation lineMovementOrientation; 
-    public float lineDistance = 5f; 
+    public LineMovementOrientation lineMovementOrientation;
+    public float lineDistance = 7f;
 
     // Circle movement vars
     public CircularMovementOrientation circularMovementOrientation;
@@ -52,6 +55,8 @@ public class MovingPlatform : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        randomSpeed = UnityEngine.Random.Range(1f, 1.5f);
+        randomDistance = UnityEngine.Random.Range(8.5f, 12f);
         // Set start position
         startPosition = this.transform.position;
         zigzagStep = 0f;
@@ -62,6 +67,7 @@ public class MovingPlatform : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+
         // Manage how the platform have to move according to movementType var
         switch (movementType) {
             case MovementType.line:
@@ -118,6 +124,9 @@ void LateUpdate()
             break;
             case LineMovementOrientation.vertical:
                 y = startPosition.y + Mathf.Sin(Time.time * speed) * lineDistance;
+            break;
+            case LineMovementOrientation.verticalRandom:
+                y = startPosition.y + Mathf.Sin(-(Time.time * randomSpeed * 1.1f)) * randomDistance;
             break;
         }
 
