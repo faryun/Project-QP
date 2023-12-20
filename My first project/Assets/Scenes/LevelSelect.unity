@@ -180,7 +180,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "\uB2E8\uACC4 \uC120\uD0DD"
+  m_text: Level Select
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: c47cf29aeb8bd0a41b6517743af64b09, type: 2}
   m_sharedMaterial: {fileID: 8474425194766171864, guid: c47cf29aeb8bd0a41b6517743af64b09, type: 2}
@@ -1394,7 +1394,7 @@ MonoBehaviour:
   destinationScene: Level_2
   level: 2
   record: {fileID: 945590916}
-  nextLevelButton: {fileID: 2127125762}
+  nextLevelButton: {fileID: 429353965}
 --- !u!114 &429353964
 MonoBehaviour:
   m_ObjectHideFlags: 0
